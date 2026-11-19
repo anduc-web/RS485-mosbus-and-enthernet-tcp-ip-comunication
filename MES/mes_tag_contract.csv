@@ -1,0 +1,27 @@
+﻿device_id,area,address,name,type,scale,unit,writable,description
+254,input,0,humidity_pct,int16,0.1,%RH,false,Độ ẩm không khí
+254,input,1,temp_c,int16,0.1,degC,false,Nhiệt độ không khí
+254,input,2,pump_state,bool,1,,false,Bơm đang chạy
+254,input,3,fan_state,bool,1,,false,Quạt đang chạy
+254,input,4,lamp_state,bool,1,,false,Đèn halogen đang sáng
+254,input,5,mode,enum,1,,false,0=AUTO 1=MANUAL
+254,input,6,estop,bool,1,,false,E-STOP đang khóa
+254,input,7,flags,bitfield,1,,false,b0 sensor_ok · b1 connected · b2 cfg_valid · b3 dữ liệu cũ
+254,input,8,uptime_s_lo,uint32,1,s,false,Thời gian chạy (16 bit thấp)
+254,input,9,uptime_s_hi,uint32,1,s,false,Thời gian chạy (16 bit cao)
+254,input,10,data_age_s,uint16,1,s,false,Tuổi dữ liệu cảm biến — >10 s là cũ
+254,input,11,seq,uint16,1,,false,Bộ đếm số lần cập nhật (chống đọc trùng)
+254,holding,0,rh_on_pct,int16,0.1,%RH,true,Ngưỡng bật bơm
+254,holding,1,rh_off_pct,int16,0.1,%RH,true,Ngưỡng tắt bơm
+254,holding,2,fan_on_c,int16,0.1,degC,true,Ngưỡng bật quạt
+254,holding,3,fan_off_c,int16,0.1,degC,true,Ngưỡng tắt quạt
+254,holding,4,heat_on_c,int16,0.1,degC,true,Ngưỡng bật đèn
+254,holding,5,heat_off_c,int16,0.1,degC,true,Ngưỡng tắt đèn
+254,holding,6,pump_watchdog_s,uint16,1,s,true,Watchdog bơm
+254,holding,7,lamp_watchdog_s,uint16,1,s,true,Watchdog đèn
+254,holding,8,failsafe_cycles,uint16,1,,true,Số chu kỳ failsafe
+254,holding,9,mode_cmd,enum,1,,true,Lệnh chế độ 0=AUTO 1=MANUAL
+254,coil,0,pump_cmd,bool,1,,true,Bật/tắt bơm
+254,coil,1,fan_cmd,bool,1,,true,Bật/tắt quạt
+254,coil,2,lamp_cmd,bool,1,,true,Bật/tắt đèn halogen
+254,coil,3,estop_cmd,bool,1,,true,"1 = kích hoạt E-STOP, 0 = giải phóng"
